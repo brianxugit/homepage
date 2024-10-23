@@ -34,6 +34,8 @@ ul {
 }
 a {
     color: var(--text-color);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .container {
@@ -63,6 +65,9 @@ a {
     grid-auto-rows: max-content;
 
     justify-items: center;
+}
+.gallery a {
+    text-decoration: none;
 }
 
 .card-selector {
@@ -122,6 +127,55 @@ a {
     box-shadow: 0 5px 10px 1px rgb(131, 131, 131);
     z-index: 10;
 }
+
+.vertical img {
+    max-width: 100%;
+    width: 50%;
+
+    background-color: var(--test-color);
+}
+.hoverable img {
+    transition: transform 0.24s, box-shadow 0.24s;
+}
+.hoverable img:hover {
+    transform: scale(1.25);
+    box-shadow: 0 5px 10px 1px rgb(131, 131, 131);
+    z-index: 10;
+}
+.gifs img {
+    background-color: var(--test-color);
+}
+
+.lightbox {
+    display: none;
+    position:fixed;
+
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+}
+.lightbox:target {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox img {
+    display: block;
+    margin: auto;
+    max-height: 75vh;
+    max-width: 80vh;
+    
+    background-color: black;
+}
+.lightbox .close {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
 
 video {
     min-width: 350px;
